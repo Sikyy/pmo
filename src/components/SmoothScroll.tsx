@@ -1,15 +1,13 @@
 'use client';
 import { useEffect } from 'react';
-// @ts-ignore
 import Lenis from 'lenis';
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    // 使用any类型绕过类型检查
-    const lenis = new (Lenis as any)({
+    const lenis = new Lenis({
       duration: 1.2,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-      smooth: true, 
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
       mouseMultiplier: 1,
       touchMultiplier: 2,
       smoothTouch: false
