@@ -1,12 +1,14 @@
 'use client';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
+import Image from 'next/image';
 
 interface Product {
   id: number;
   name: string;
   description: string;
   specs: string;
+  image: string;
 }
 
 const products: Product[] = [
@@ -14,19 +16,22 @@ const products: Product[] = [
     id: 1,
     name: 'WAVES 60',
     description: '旗舰60%布局键盘，极简主义设计与出色的声学表现',
-    specs: '铝合金机身 / PBT键帽 / 静音轴'
+    specs: '铝合金机身 / PBT键帽 / 静音轴',
+    image: '/1.png'
   },
   {
     id: 2,
-    name: 'RIPPLE 75',
+    name: 'WAVE 75',
     description: '全功能75%布局，带有触控旋钮和波纹形外观设计',
-    specs: '金属CNC外壳 / 热插拔 / 可编程功能'
+    specs: '金属CNC外壳 / 热插拔 / 可编程功能',
+    image: '/2.png'
   },
   {
     id: 3,
     name: 'FLOW 65',
     description: '紧凑型设计与出色的便携性，为移动办公带来顺畅体验',
-    specs: '轻量化设计 / 有线/无线双模 / 长效电池'
+    specs: '轻量化设计 / 有线/无线双模 / 长效电池',
+    image: '/3.png'
   }
 ];
 
@@ -79,13 +84,19 @@ const ProductRow = ({ product, index, scrollYProgress }: ProductRowProps) => {
     [0, 1],
     [isEven ? -50 : 50, 0]
   );
+  
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0.5, 1]
+  );
 
   return (
     <motion.div 
       className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
         isEven ? '' : 'lg:flex-row-reverse'
       }`}
-      style={{ opacity: scrollYProgress }}
+      style={{ opacity }}
     >
       <div className={`${isEven ? '' : 'lg:order-2'}`}>
         <motion.div
@@ -94,11 +105,15 @@ const ProductRow = ({ product, index, scrollYProgress }: ProductRowProps) => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="aspect-square bg-gradient-to-br from-[var(--background)] to-[var(--accent-light)] bg-opacity-5 relative overflow-hidden"
+          className="aspect-square relative overflow-hidden"
         >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-[12rem] font-thin opacity-10">{product.name.split(' ')[1]}</span>
-          </div>
+          <Image 
+            src={product.image}
+            alt={product.name}
+            fill
+            className="object-contain"
+            priority
+          />
         </motion.div>
       </div>
       

@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Hero = () => {
   return (
@@ -46,12 +47,14 @@ const Hero = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="relative w-full max-w-xl aspect-square"
           >
-            {/* 产品图片占位，应使用实际产品高质量图片 */}
             <div className="w-full h-full relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--text-primary)] via-[var(--accent-light)] to-[var(--accent)] opacity-5"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-[15rem] font-thin opacity-10">60</div>
-              </div>
+              <Image
+                src="/4.png"
+                alt="WAVES 60 Keyboard"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
             
             {/* 键帽特写 */}

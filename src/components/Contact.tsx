@@ -66,16 +66,16 @@ const Contact = () => {
               <div>
                 <h3 className="text-xl font-light mb-4">联系方式</h3>
                 <div className="space-y-4">
-                  <p className="text-lg">电子邮件：<span className="text-[var(--text-secondary)]">info@pmokeyboards.com</span></p>
-                  <p className="text-lg">电话：<span className="text-[var(--text-secondary)]">+86 123 4567 8910</span></p>
+                  <p className="text-lg">电子邮件：<span className="text-[var(--text-secondary)]">yyymalicious@gmail.com</span></p>
+                  <p className="text-lg">电话：<span className="text-[var(--text-secondary)]">+86 198 1689 1233</span></p>
                 </div>
               </div>
               
               <div>
                 <h3 className="text-xl font-light mb-4">地址</h3>
                 <p className="text-[var(--text-secondary)]">
-                  中国上海市<br />
-                  静安区南京西路1266号<br />
+                  中国杭州市<br />
+                  西湖区转塘街道<br />
                   恒隆广场28楼2801室
                 </p>
               </div>

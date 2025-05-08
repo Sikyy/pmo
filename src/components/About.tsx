@@ -16,10 +16,10 @@ const About = () => {
     <section 
       id="about" 
       ref={containerRef}
-      className="section-spacing relative min-h-[90vh] flex flex-col justify-center"
+      className="section-spacing relative min-h-[70vh] flex flex-col justify-center"
     >
-      <div className="minimal-container grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
+      <div className="minimal-container">
+        <div className="max-w-2xl">
           <motion.div 
             className="mb-12"
             initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ const About = () => {
                 从选材到制造，我们坚持高品质标准，每个细节都经过严格把控，确保产品不仅美观，而且经久耐用。
               </p>
               
-              <div className="pt-4">
+              <div className="pt-6">
                 <a href="/contact" className="text-sm uppercase tracking-widest flow-border py-2">
                   联系我们
                 </a>
@@ -58,24 +58,6 @@ const About = () => {
             </div>
           </motion.div>
         </div>
-        
-        <motion.div 
-          className="relative h-[70vh] flex items-center justify-center"
-          style={{ y: translateY }}
-        >
-          <div className="absolute top-1/4 left-1/4 w-24 h-24 bg-[var(--accent-light)] bg-opacity-5 rounded-full"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-[var(--accent-light)] bg-opacity-5 rounded-full"></div>
-          
-          <motion.div 
-            className="w-[25vw] h-[25vw] max-w-md max-h-md rounded-full bg-gradient-to-br from-[var(--background)] to-[var(--accent-light)] bg-opacity-5 flex items-center justify-center overflow-hidden"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-          >
-            <span className="text-[5rem] font-thin tracking-tight opacity-20">PMO</span>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
