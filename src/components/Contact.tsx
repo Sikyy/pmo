@@ -42,7 +42,7 @@ const Contact = () => {
   };
   
   return (
-    <section id="contact" className="section-spacing min-h-screen flex flex-col justify-center">
+    <section className="section-spacing min-h-screen flex flex-col justify-center">
       <div className="minimal-container">
         <motion.div
           className="mb-16"

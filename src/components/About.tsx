@@ -51,7 +51,7 @@ const About = () => {
               </p>
               
               <div className="pt-4">
-                <a href="#contact" className="text-sm uppercase tracking-widest flow-border py-2">
+                <a href="/contact" className="text-sm uppercase tracking-widest flow-border py-2">
                   联系我们
                 </a>
               </div>

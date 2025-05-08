@@ -2,10 +2,15 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  
+  // 检查是否在主页
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,10 +24,18 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrolled]);
 
+  // 导航项数组
   const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Products', href: '#products' },
-    { name: 'Contact', href: '#contact' },
+    { 
+      name: 'About', 
+      href: isHomePage ? '#about' : '/#about' 
+    },
+    { 
+      name: 'Products', 
+      href: isHomePage ? '#products' : '/#products' 
+    },
+    { name: 'Download', href: '/download' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -35,7 +48,7 @@ const Header = () => {
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
       <div className="minimal-container flex justify-between items-center">
-        <Link href="#home">
+        <Link href="/">
           <motion.div 
             className="cursor-pointer"
             whileHover={{ opacity: 0.8 }}

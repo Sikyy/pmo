@@ -1,22 +1,20 @@
 'use client';
 
 import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import Products from '@/components/Products';
-import About from '@/components/About';
+import Download from '@/components/Download';
 import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
 
-export default function Home() {
+export default function DownloadPage() {
   return (
     <SmoothScroll>
       <main className="min-h-screen overflow-hidden">
         <Header />
-        <Hero />
-        <Products />
-        <About />
+        <div className="pt-32">
+          <Download />
+        </div>
         <Footer />
       </main>
     </SmoothScroll>
   );
-}
+} 
