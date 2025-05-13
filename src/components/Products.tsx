@@ -2,6 +2,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Product {
   id: number;
@@ -129,9 +130,9 @@ const ProductRow = ({ product, index, scrollYProgress }: ProductRowProps) => {
           <p className="text-lg text-[var(--text-secondary)]">{product.description}</p>
           <div className="text-sm tracking-wide opacity-60">{product.specs}</div>
           <div className="pt-4">
-            <a href="#" className="text-sm uppercase tracking-widest flow-border py-2">
+            <Link href={`/products/${product.id}`} className="text-sm uppercase tracking-widest flow-border py-2">
               查看详情
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

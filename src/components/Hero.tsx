@@ -65,9 +65,9 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[var(--text-primary)] to-[var(--accent-light)] opacity-5"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
+              {/* <div className="absolute inset-0 flex items-center justify-center">
                 <span className="font-thin text-4xl opacity-40">W</span>
-              </div>
+              </div> */}
             </motion.div>
           </motion.div>
         </div>
@@ -79,7 +79,7 @@ const Hero = () => {
         animate={{ opacity: 0.5 }}
         transition={{ delay: 1.2, duration: 0.8 }}
       >
-        <div className="text-xs tracking-widest uppercase">向下滚动</div>
+        {/* <div className="text-xs tracking-widest uppercase">向下滚动</div> */}
       </motion.div>
     </section>
   );

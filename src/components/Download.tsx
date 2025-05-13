@@ -78,7 +78,7 @@ const downloadFiles: DownloadFile[] = [
   },
   {
     id: 9,
-    name: 'WAVE75三模无关（QMK代码）',
+    name: 'WAVE75三模无光（QMK代码）',
     description: 'WAVE 75 QMK代码--仅适用于三模无光版本',
     type: 'bin',
     size: '56.6KB',
